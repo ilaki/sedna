@@ -1,0 +1,73 @@
+.shout-out {
+
+    &__title {
+        @extend %title-text;
+        font-weight: normal;
+
+
+        @include for-phone {
+            // overflow-wrap: break-word;
+            text-align: initial;
+            line-height: 1.5;   
+        }
+
+        @include for-tablet {
+            text-align: center;
+        }
+    }
+
+    ul {
+        margin-top: 82px;
+
+
+        @include for-phone {
+
+            margin-top: 40px;
+        }
+
+        @include for-tablet {
+          
+        }
+
+        li {
+            float: left;
+            width: calc(50% - 98px);
+
+            @include for-tablet {
+                width: calc(50% - 50px);
+            }
+
+            & + li {
+                margin-left: 196px;
+
+                @include for-tablet {
+                    margin-left: 100px;
+                }
+
+                @include for-phone {
+                    margin-left: initial;
+                }
+            }
+
+            @include roll-from-bottom;
+
+            @include for-phone {
+                width: 100%;
+                margin: 30px 0;
+            }
+        }
+    }
+}
+
+.shout-out { 
+
+    &__name {
+        @include subcontent-title-text;
+        color: $default-dark-font;
+    }
+
+    &__description {
+        @include description-text;
+        margin-top: 20px;
+    }
+}

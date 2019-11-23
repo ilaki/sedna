@@ -1,0 +1,102 @@
+@keyframes shake-up-down {
+    0% {
+        bottom: -84px;
+    }
+    30%{
+        bottom: -94px;
+    }
+    60%{
+        bottom: -84px;
+    }
+    80% {
+        bottom: -74px;
+    }
+    100%{   
+        bottom: -84px;
+    }
+}
+
+.customisation {
+
+    position: relative;
+    text-align: center;
+    background-color: #323943;
+
+    .diamond {
+
+        position: absolute;
+        bottom: -84px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include for-phone {
+            width: 150px;
+        }
+
+        &.is-visible , &:hover {
+            cursor: pointer;
+            animation: shake-up-down 2s ease-in infinite;
+        }
+       
+    }
+}
+
+.customise-note {
+    
+    @include for-tablet {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    &__title{
+
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.5;
+
+        @include for-phone {
+            font-size: 20px;
+        }
+    }
+
+    &__subheading {
+
+        font-size: 16px;
+        font-weight: 300;
+        margin-top: 18px;
+        color: #fff;
+
+        @include for-tablet {
+            line-height: 1.5;
+        }
+
+        @include for-phone {
+            line-height: 1.5;
+        }
+
+    }   
+
+    .btn {
+        margin-top: 50px;
+        padding: 18px 36px;
+
+        @include for-phone {
+            padding: 10px 35px;
+        }
+    }
+}
+
+
+.sketch-font {
+
+    color: #4b515a;
+    font-weight: 200;
+
+    sup {
+
+        font-size: 25px; 
+        color: #f69d52;
+        vertical-align: super;
+
+    }
+}

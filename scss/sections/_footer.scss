@@ -1,0 +1,224 @@
+footer {
+    font-size: 13px;
+    border-top: 60px solid #495061;
+    position: relative;
+    color: #fff;
+
+    .arrow-box {
+        position: absolute; 
+        right: 0;
+        top: -60px;
+        width: 60px;
+        height: 60px;
+        background-color : #373d4a; 
+        text-align: center;
+        cursor: pointer;
+
+        @include for-laptops-and-above {
+            right: calc((100vw - 1100px)/2); 
+        }
+        
+        &::before {
+            content: '';
+            margin-top: 26px;
+            @extend %scroll-down-arrow;
+            transform: rotate(135deg);
+        }
+    }
+}
+
+.footer-left {
+    width: 60vw;
+    position: absolute;
+    height : 425px;
+    background-color: $default-dark-font;
+    padding-bottom: 40px;  
+    padding-top: 122px;  
+
+
+    @include for-phone {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding : 20px;
+    }
+
+    @include for-tablet {
+        padding-left: 20px;
+    }
+
+    @include for-laptops-and-above {
+        padding-left: calc((100vw - 1100px)/2);
+    }
+}
+
+.footer-left {
+
+    &__content {
+        // margin-left: 72px;
+        margin-right: 88px;
+        max-width: calc(60vw - 72px);
+
+        @include for-phone {
+        
+            margin: 0;
+            max-width: 100%;
+        }
+
+        &__footer-nav {
+            border-top: 2px solid #4e566c;
+            padding: 26px 0;
+            margin: 0;
+            font-size: 0;
+           
+        
+
+            @include for-phone {
+                border: none;
+            }
+          
+            li {
+                display: inline-block;
+                line-height: 2;
+              
+    
+                @include for-phone {
+                    display: block;
+                    margin-top: 10px;
+                }
+    
+                @include for-tablet {
+                    margin-top : 10px;
+                }
+
+                a {
+                    @include subcontent-title-text;
+                    color: #fff;   // here i am over writing the color  is it okay 
+                    margin-right: 30px;
+                    font-size: 13px;
+                    border-bottom: 1px solid transparent;
+    
+                    &:hover {
+                        border-bottom: 2px solid #fff;
+                        transition: 0.3s ease;
+                    }
+                }
+            }    
+        }
+    
+        .license-info {
+            margin-top: 26px;
+        }
+    }
+}
+    
+
+
+.license-info {
+
+    p {
+        text-transform: capitalize;
+        color: #fff;
+        margin-right: 20px;
+
+        span {
+            color: #838791; 
+        }
+
+        &:nth-child(2) {
+            margin-top: 10px;
+        }
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: $pink;
+                transition: 0.3 ease; 
+                cursor: pointer; 
+            }
+        }  
+    }
+}
+
+.footer-right {
+    right: 0;
+    width: 40vw;
+    height : 425px;
+    position: absolute;
+    background-color: #373d4a;
+    padding-bottom: 40px;
+    padding-top: 122px;
+
+    @include for-phone {
+        position: relative;
+        width: 100%;
+        padding : 20px;
+        height: auto;
+    }
+
+    @include for-laptops-and-above {
+        padding-right: calc((100vw - 1100px)/2);
+    }
+}
+
+.social {
+    margin-left : 72px;
+
+    @include for-phone {
+        margin : 0;
+    }
+
+    @include for-tablet{
+        margin-top: 10px;
+    }
+   
+    p {
+        text-transform: uppercase;
+        margin-top: 26px;
+    }
+
+    .icon-wrapper {
+        margin-top: 26px;
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+
+        @include for-phone {
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+
+        i {
+            position: absolute;
+            font-size: 20px;
+            @include position-center;
+        }
+
+    }
+
+    .twitter-icon-wrapper {
+        background-color: #1ab4ef;   
+        
+        &:hover {
+            background-color: rgba(#1ab4ef , 0.4);
+            cursor: pointer;
+        }
+    }
+
+    .fb-icon-wrapper {
+        background-color: #3b5898;
+
+        &:hover {
+            background-color: rgba(#3b5898 , 0.4);
+            cursor: pointer;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,48 @@
+.features {
+    &__list-item {
+        width: calc(100%/3 - 72px);
+        float: left;
+        margin-left: 72px;
+        position: relative;
+
+       @include roll-from-bottom;
+
+        .icon-svg {
+            width: 40px;
+            height: 40px;
+            @extend %icon-svg;
+
+            @include for-phone {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @include for-phone {
+            float: none;
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            padding: 50px 20px ;
+            text-align: center;
+         
+        }
+
+        @include for-tablet {
+            margin-left: 60px;
+        }
+    }
+
+    &__name {
+        @include subcontent-title-text;
+        color: $default-dark-font;
+    }
+
+    &__description {
+        @include description-text; 
+        margin-top: 10px;   
+    }
+
+}   
+

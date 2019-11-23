@@ -1,0 +1,209 @@
+main {
+    // position: relative;
+    float: right;
+    max-width: 50%;
+    padding-left: 72px;
+
+    @include for-phone {
+        max-width: 100%;
+        margin : 0;
+        padding-left: 20px;
+    }
+}
+
+.bg-wrapper-ipad {
+    float: left;
+    position: relative;  
+    overflow-y: hidden;
+    max-height: 600px;
+    max-width: 50%;
+
+    @include show-on-scroll(-200%);
+
+    @include for-phone {
+        float: none;
+        margin: 20px 0 40px; 
+        max-width: 200px; 
+    }
+
+    @include for-tablet {
+        max-width: 350px; 
+    }
+}
+
+.iphone-wrapper {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    
+    @include for-phone {
+        top: 92px;
+        width: 100px;
+    }
+
+    @include for-tablet {
+        top: 158px;
+        max-width : 250px;
+        transform: translateX(60px);
+    }
+   
+    .screen-icons {
+        position: absolute;
+        top: 32%;
+        left: 60px;
+
+        @include for-phone {
+            top: 40%;
+            left : 10px;
+            transform : translateY(-50%); 
+        }
+
+        @include for-tablet {
+            left: 8px;
+            top: 40%;
+        }
+
+        .screen-icon {
+            margin: 0 15px;
+            color : #fff; 
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #454d5e;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+
+            @include for-phone {
+                width: 15px;
+                height: 15px; 
+                top: 156px;
+                margin: 0 4px;
+                font-size: 8px;
+                line-height: 16px;
+            }
+
+            @include for-tablet {
+             margin: 0 10px;
+            }
+        }
+    }
+
+    h5 {
+        position: absolute;
+        @include position-center;
+        @include subcontent-title-text;
+        font-size: 10px;
+        top: 45%;
+        letter-spacing: 2.6px;
+        color: #acb1b4;
+        padding-bottom: 12px;
+        border-bottom: solid 2px;
+
+        @include for-phone {
+        font-size: 5px;
+        top: 60%;
+        letter-spacing: 1.5;
+        }
+
+        @include for-tablet {
+            font-size: 8px;
+            top: 52%;
+            left: 12px;
+            transform: translateX(15%);
+            border-bottom: none;
+        }
+    }
+}
+    
+.ipad {
+    max-width: 80%;
+}
+
+.i-phone {
+    max-width: 100%;
+
+    @include for-tablet {
+        max-width: 70%;
+    }
+}
+
+.significance {
+    header {   
+
+        @include for-phone {    
+            // margin-left: 80px;  //need to change
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    article {
+        margin-left: 55px;
+        margin-top: 58px;
+        // padding-left: 150px;
+        // max-width: 50vw;
+
+        @include for-phone {     //need to change
+            // margin-left: 80px;
+            margin: 0;
+            padding: 0;
+            // clear: left; 
+            padding: 0 0 0 80px;
+        }
+        
+        // @include for-mini-laptop {
+        //     padding-left: 20%;
+        // }
+    }
+}
+
+
+.significance {
+
+    background-color: #e6e9ea;
+    &__title {
+        font-weight: normal; 
+
+        @include for-phone {
+            margin-top: 20px;
+        }
+    }
+
+    &__description {
+       @include description-text;
+       margin-top: 20px;
+    }
+
+    &__list-item {
+        position: relative;
+
+        .icon-svg {
+            width: 35px;
+            height: 35px;
+            @extend %icon-svg;
+        }
+    
+        &--title {
+            @include subcontent-title-text;
+            color: $default-dark-font;
+            margin-top: 20px;
+        }
+
+        &--description {
+            @include description-text;
+            margin-top: 8px;
+            max-width: 324px;
+        }
+
+        &:not(last-child) {
+            margin-bottom: 42px;
+            border-bottom: 1px solid #e6e9ea;
+        }
+    }
+}
+     
+
+
+
+

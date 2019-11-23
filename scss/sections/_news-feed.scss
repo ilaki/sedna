@@ -1,0 +1,137 @@
+.news-feed {
+    text-align: center;
+
+    li {
+        display: inline-block;  
+        position: relative; 
+        width: 33.33%;
+        opacity: 0;
+        margin-bottom: 40px;
+        padding-bottom: 18px;
+        transition: opacity 1s 0.5s ease;
+        font-size: initial;
+        cursor: pointer;  
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            // z-index: 100;
+            bottom : 0;    
+            height: 0;
+            width: 100%;
+            background-color: rgba($pink , 0);
+        }
+
+        &.is-visible {
+            opacity: 1;
+        }
+        
+        &:hover {
+            transition: all 0.3s ease;
+            box-shadow: 1px 1px 2px rgba(0,0,0, 0.2);
+            
+            &::after {
+                height: 100px;
+                transition: all 0.5s 0.1s ease-out;
+                background-color: rgba($pink, 0.1);
+
+                @include for-phone {
+                    height: 82px;
+                }
+            }
+            
+            img {
+                transition: all 0.5s 0.1s ease-in;
+            }
+        }
+
+        @include for-phone {
+            width: 100%;
+        }
+
+    }
+
+    img {
+        object-fit: contain;
+        width : 100%;
+       
+        @include for-phone {
+            transform: none;     // need to check this
+        }
+    }
+
+    h5 {
+        @include subcontent-title-text;
+        color: #acb1b4;
+        font-size: 11px;
+        margin-top: 30px;
+
+        @include for-phone{
+            margin-top: 20px;
+        }
+    }
+
+    p {
+        font-size: initial;
+        color: #677074;
+        margin-top: 20px;
+        font-weight: 300;
+        cursor: pointer;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // display: block;
+        // text-overflow: ellipsis;
+
+        @include for-phone {
+            margin-top: 10px;
+        }
+
+        &:hover {
+            color: $pink;
+            transition: 0.3s ease;
+        }
+    }
+
+
+    .btn-outline {
+        padding: 10px 35px;
+    }
+}
+
+.news-feed {
+
+    ul {
+        font-size: 0;
+    }
+
+    .row-2 {
+        opacity: 0;
+        margin-bottom: 0;
+        transition: all 0.4s  0.25s ease;
+    }
+}
+
+
+.news-feed {
+    
+    ul.added-more {
+        > .row-2{
+            opacity: 1;
+            margin-bottom: 40px;
+            padding-bottom: 18px;
+        }
+    }
+}
+
+
+// @keyframes slide-up {
+//     0% {
+//         opacity: 0;
+//         transform: translateY(20px);
+//     }
+//     100% {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }

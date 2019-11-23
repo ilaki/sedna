@@ -1,0 +1,41 @@
+@include for-phone {
+    #mobile-nav { 
+        display: block; 
+        opacity: 0;
+        height: 0;
+        transition: height 0.3s ease;
+
+        &.fullscreen {  
+
+            opacity: 1;
+            width: 100vw;
+            height: 100vh;
+    
+            & ~ #nav-toggler {
+                top: 46px;
+            }
+    
+            ul {
+                position : absolute;
+                @include position-center;
+                top: 40%;
+            
+    
+                li {
+                    text-align: center;
+                    display: block;
+                    margin-top: 20px;
+    
+                        a {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+         
+        } 
+}
+
+ 
+
+

@@ -1,0 +1,145 @@
+.sign-up {
+    text-align: center;
+    h3 {
+        @extend %title-text;
+        text-transform: none;
+    }
+
+    h5 {
+        margin-top: 18px;
+        font-size: 15px;    // this works if taken default to 12px i think through media query 
+        @include description-text; 
+    }
+}
+
+.sign-up {
+
+&__form {
+    margin: 55px auto ;
+    position: relative;
+    max-width: 400px;
+    
+
+    input {
+        padding: 18px 80px 18px 0px;
+        display: inline-block;
+        width: 80%;
+        font-size: 14px; 
+        border: none;
+    }
+
+    .btn-form {
+        width: 400px;
+
+        @include for-phone {
+            max-width: 280px;
+        }
+        
+        font-size: 14px;
+        padding: 18px 0 ;
+        border-radius: 5px;
+        margin-top: 10px;       
+
+        &:hover {
+            @extend %btn-outline;
+        }
+
+        }
+    }
+}
+
+
+.sign-up {
+
+    &__wrapper {
+        position: relative;
+        width: 400px;
+        text-align : right;
+        border: solid 1px #e6e9ea;
+        border-radius: 5px; 
+        padding : 5px 5px 5px 22px;
+        margin : 0 auto;
+        font-size: 0;
+      
+        @include for-phone {
+            max-width: 280px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            left: calc(50% - 200px + 58px);  
+            top: 16px;
+            border: solid 1px #e6e9ea;
+
+            @include for-phone {
+                left : calc(50% - 140px + 58px);
+            }
+        }
+
+        &:focus-within {
+
+            border: 1px solid $pink;
+            transition : border 0.5s ease;
+
+            label {
+                font-size: 14px;
+                opacity: 0.6;
+                transition: all 0.5s ease;
+            }
+           
+            input::placeholder {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__email-wrapper {
+        background: {
+            image:  url(../assets/images/mail/mail.png);
+            repeat : no-repeat;
+            position: left center;
+            origin : content-box;
+        } 
+    }
+
+    &__pwd-wrapper {
+        background: url(../assets/images/lock/lock.png) content-box no-repeat left center;
+        margin-top: 10px;
+    }
+
+    label {
+        position: absolute;
+        left: 50px;
+        top: 36px;
+        transform: translateY(-50%);
+        opacity: 0;
+        text-transform: capitalize;
+    }
+}
+
+.sign-up {
+    &__email-wrapper:focus-within {
+        label[for = "email"] {
+            transform: translate(300px , -14px);
+
+            @include for-phone {
+                transform: translate(180px , -14px);
+            }
+        }
+    }
+
+    &__pwd-wrapper:focus-within {
+        label[for = "pwd"] {
+
+            transform: translate(270px , -14px);
+
+            @include for-phone {
+                transform: translate(150px , -14px);
+            }
+           
+        }
+    }
+}

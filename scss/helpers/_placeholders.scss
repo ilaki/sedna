@@ -1,0 +1,47 @@
+%btn {
+    font-size: 13px;
+    border-radius: 40px;
+    text-transform: uppercase;  
+}   
+
+%btn-fill {
+    color: #fff;
+    background-color: $pink;
+    border: 2px solid $pink; 
+}
+
+%btn-outline {
+    color: $pink;
+    background-color: transparent;
+    border: 2px solid $pink; 
+}
+
+%title-text {
+    font-weight: normal;
+    text-transform: capitalize;
+    color: $default-dark-font;
+}
+
+%scroll-down-arrow {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 2px -2px 0 0 #fff;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: inset 2px -2px 0 0 $pink;
+    }
+    
+}
+
+%icon-svg {
+    position: absolute;
+    top: 0;
+    right: calc(100% + 20px);
+}
+
+%radio-checked-style {
+    background: transparent;
+    border: 2px solid #fff; 
+}

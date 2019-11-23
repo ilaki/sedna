@@ -1,0 +1,19 @@
+{
+	"news": [{
+			"url": "./assets/images/night-sky/night-sky.png",
+			"title": "feature",
+			"desc": "what's new in the new version"
+		},
+
+		{
+			"url": "./assets/images/night-sky/night-sky.png",
+			"title": "design",
+			"desc": "elevated roof tops "
+		}, {
+			"url": "./assets/images/night-sky/night-sky.png",
+			"title": "product",
+			"desc": "something's not right"
+		}
+
+	]
+}

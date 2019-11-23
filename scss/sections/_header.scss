@@ -1,0 +1,149 @@
+.main-header {
+  
+    &.add-bg {
+        background: $black-bg;
+    }
+
+    #nav-toggler {
+        display: none;
+    }
+
+    @include for-phone {
+        #nav-toggler {
+            display: block;
+            position: fixed;
+            right: 40px;
+            top: 46px;  
+            transform: translateY(-50%);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+           
+            &:hover {
+                border: 1px solid $pink;
+                transition: all 0.2s ease;
+
+                i {
+                    color: $pink;
+                    transition: color 0.2s ease;
+                }
+            }
+
+            i {
+                font-size: 20px;
+                position: absolute;
+                @include position-center;
+            }  
+        }
+    }  
+}
+
+.nav-bar {
+    padding-top: 38px;
+    padding-bottom : 30px;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    background-color : $black-bg;
+    z-index: 100;
+    font-size : 0;
+
+    &.remove-border {
+        border: none;
+    }
+    
+    .brand-logo {
+        cursor: pointer;
+        margin-top: 8px;
+        max-width: 104px;
+        display: inline-block;
+        margin-right: 72px;
+        font-size: initial;
+
+        @include for-phone {
+            display: block;
+            margin: 0 auto;
+        }
+
+        @include for-tablet {
+            margin-right: 50px;
+        }
+    }
+
+    nav {
+        display: inline-block;  
+        vertical-align: top;
+        margin-top: 10px;
+
+        @include for-phone  {
+            display: none;
+        }
+    }
+}
+
+.nav-bar {
+    input[type = "checkbox"] {
+        display : none;
+    }
+
+    li {
+        display: inline-block;
+
+        a {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 13px;
+            margin: 0 15px;
+    
+            &:hover {
+                color: $pink;
+            }
+        } 
+    }
+}
+
+
+.auth {
+    float: right;
+
+    @include for-phone {
+       display: none;
+    }
+
+    @include for-tablet {
+        line-height: 1.5;
+    }
+
+    .btn-login {
+        color: #fff;
+        background-color: transparent;
+        text-transform: uppercase;
+        border: none;
+        font-size: initial;
+
+        &:hover {
+            color: $pink;
+        }
+    }  
+
+    .btn-signup {
+        @extend %btn;
+        color: #fff;
+        background-color: transparent;
+        border: 2px solid #fff;
+        padding: 8px 30px;
+        margin-left: 20px;
+
+        &:hover {
+            @extend %btn-fill;
+        }
+    }
+}
+
+
+@keyframes trans {
+    0%{
+      bottom: -30px
+    }
+    100%{
+      bottom: -100px
+    }
+  }

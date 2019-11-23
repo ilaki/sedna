@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline : none;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+//links
+a,a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color : initial;
+}
+
+//list
+li{
+    list-style: none;
+}
+
+//buttons
+button{
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s ease;
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
+.btn-fill {
+    @extend %btn-fill;
+}
+
+.btn-outline {
+    @extend %btn-outline;
+    
+    &:hover  , &:focus{
+        @extend %btn-fill;
+    }
+}
+
+//input styles
+input {
+    text-overflow: ellipsis;
+}
+
+input[type = "radio"] {
+    transition: all 0.3s ease;
+}
+
+//body
+body{
+    font: normal  300 15px OpenSans, sans-serif;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.hide-it {
+   display: none;
+}
+

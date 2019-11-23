@@ -1,0 +1,155 @@
+.testimonials {
+    background: url("../assets/images/peter-finlan/peter-finlan.png") center no-repeat;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+
+    .profile-wrapper {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        padding: 5px 10px 20px 10px;
+        background-color: rgba(255,255,255,0.2);
+        margin-bottom: 28px;
+
+        &:hover {
+            border: 2px solid $pink;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        &__profile {
+            object-fit: cover;
+            max-width: 100%;
+        }
+    }
+
+    input[name = "r"]{
+        position : absolute;
+        visibility : hidden;  
+    }
+        
+    .slide{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition : 0.7s 0.25s ease-in;
+
+        @include for-phone {
+            width: 80%;
+        } 
+    }
+     
+    #r1:checked ~ .show-slide{
+        opacity: 1;
+    }
+    #r2:checked ~ .show-slide{
+        opacity: 1; 
+    }
+    #r3:checked ~ .show-slide{
+        opacity: 1;
+    } 
+     
+    #r1:checked ~ .slide-nav{
+
+        label:nth-child(1) {
+            @extend %radio-checked-style;
+        }  
+
+    }
+    
+    #r2:checked ~ .slide-nav{
+        label:nth-child(2) {
+            @extend %radio-checked-style;
+        } 
+     }
+
+     #r3:checked ~ .slide-nav   {
+        label:nth-child(3) {
+            @extend %radio-checked-style;
+        } 
+     }
+
+}
+
+.profile-description {
+    max-width: 600px;
+  
+    h2 {
+        font-style: italic;
+        font-weight: 300;
+        color: #fff;
+        max-width: 600px;
+    }
+
+    h5 {
+        text-transform: uppercase;
+        margin-top: 26px;
+        letter-spacing: 2px;
+        color: #acb1b4;
+        font-weight: 300;
+        max-width: 600px;
+        word-wrap: break-word;
+        line-height: 1.5;
+
+        @include for-phone {
+            line-height: 1.5;
+        }
+    }
+}
+
+.slide-nav {
+    position: absolute;   // need to change
+    bottom: 38px;
+    left: 50%;
+    transform : translate(-50% , -50%);
+    display: flex;
+
+
+    @include for-phone {
+        bottom : 10px;
+    }
+
+    .slide-round{
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        cursor: pointer;
+        background: #5c5f6a;
+        border-radius: 50%;
+        margin: 8px;
+
+        &:hover  {
+            @extend %radio-checked-style;    
+        }
+    }
+}   
+
+.slide-arrow{
+    position: absolute;
+    font-size: 40px;
+    z-index: 100;
+    // font-weight: normal;
+    cursor: pointer;
+    color: #fff;
+}
+
+#slide-arrow-right {
+    right: 58px;
+
+    @include for-phone {
+        right: 30px;
+    }
+}
+
+#slide-arrow-left {
+    left: 58px;
+    
+    @include for-phone {
+        left: 30px;
+    }
+}
